@@ -12,6 +12,24 @@ public class ItemIDInfo {
 	private String itemID;
 	private String itemName;
 	private List<ItemSkuIDInfo> itemSkuIDInfos;
+	private String operCode;
+	private String operation;
+
+	public String getOperCode() {
+		return operCode;
+	}
+
+	public void setOperCode(String operCode) {
+		this.operCode = operCode;
+	}
+
+	public String getOperation() {
+		return operation;
+	}
+
+	public void setOperation(String operation) {
+		this.operation = operation;
+	}
 
 	@XmlElement(name = "SpecialItemInfo")
 	public List<ItemSkuIDInfo> getItemSkuIDInfos() {

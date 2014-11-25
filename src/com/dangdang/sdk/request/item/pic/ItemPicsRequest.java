@@ -9,10 +9,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "request")
 public class ItemPicsRequest {
 
-	@XmlElement(name = "ProductPicsInfo")
-	@XmlElementWrapper(name = "PicsList")
 	private List<ItemPicsInfo> itemPicsInfos;
 
+	@XmlElement(name = "ProductPicsInfo")
+	@XmlElementWrapper(name = "PicsList")
 	public List<ItemPicsInfo> getItemPicsInfos() {
 		return itemPicsInfos;
 	}

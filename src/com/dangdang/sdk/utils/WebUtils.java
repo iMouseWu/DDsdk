@@ -36,11 +36,11 @@ import com.dangdang.sdk.request.FileItem;
 
 public abstract class WebUtils {
 
-	private static final String DEFAULT_CHARSET = "GBK";
+	private static final String DEFAULT_CHARSET = "UTF-8";
 	private static final String METHOD_POST = "POST";
 	private static final String METHOD_GET = "GET";
-	private static final int DEFAULT_CONNECTTIMEOUT = 3000;
-	private static final int DEFAULT_READTIMEOUT = 5000;
+	private static final int DEFAULT_CONNECTTIMEOUT = 0;
+	private static final int DEFAULT_READTIMEOUT = 0;
 
 	private static class DefaultTrustManager implements X509TrustManager {
 
@@ -243,7 +243,7 @@ public abstract class WebUtils {
 			connHttps.setHostnameVerifier(new HostnameVerifier() {
 
 				public boolean verify(String hostname, SSLSession session) {
-					return true;// Ĭ�϶���֤ͨ��
+					return true;
 				}
 			});
 			conn = connHttps;
