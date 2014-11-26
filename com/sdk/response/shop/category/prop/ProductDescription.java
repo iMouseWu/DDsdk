@@ -1,10 +1,13 @@
 package com.dangdang.sdk.response.shop.category.prop;
 
+import java.io.Serializable;
+
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "extendedDescriptions")
-public class ProductDescription {
+public class ProductDescription implements Serializable {
 
+	private static final long serialVersionUID = 2311763434380699139L;
 	private String productDescription2;
 	private String productDescription3;
 	private String productDescription4;

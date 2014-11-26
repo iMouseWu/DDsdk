@@ -1,5 +1,6 @@
 package com.dangdang.sdk.response.shop.category.prop;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlElement;
@@ -7,8 +8,9 @@ import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "standardAttributeInfo")
-public class StandardAttributeInfo {
+public class StandardAttributeInfo implements Serializable {
 
+	private static final long serialVersionUID = 4355760121635939504L;
 	public static final String PROP_MUST = "1";
 	public static final String PROP_NO_MUST = "0";
 

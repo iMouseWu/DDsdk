@@ -71,11 +71,9 @@ public class DDClient {
 		String timestamp = getTimestamp();
 		String sign = makeSign(method, timestamp);
 		urlParams.put("sign", sign);
-		System.out.println(sign);
 		urlParams.put("v", version);
 		urlParams.put("sign_method", signMethod);
 		urlParams.put("timestamp", timestamp);
-		System.out.println(timestamp);
 		urlParams.put("app_key", appKey);
 		urlParams.put("method", method);
 		urlParams.put("format", format);

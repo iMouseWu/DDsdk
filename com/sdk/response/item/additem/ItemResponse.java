@@ -3,7 +3,7 @@ package com.dangdang.sdk.response.item.additem;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import com.dangdang.sdk.response.shop.BaseResponse;
+import com.dangdang.sdk.response.BaseResponse;
 
 @XmlRootElement(name = "response")
 public class ItemResponse extends BaseResponse {

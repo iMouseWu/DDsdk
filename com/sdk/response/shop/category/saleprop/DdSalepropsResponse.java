@@ -6,11 +6,12 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import com.dangdang.sdk.response.shop.BaseResponse;
+import com.dangdang.sdk.response.BaseResponse;
 
 @XmlRootElement(name = "response")
 public class DdSalepropsResponse extends BaseResponse {
 
+	private static final long serialVersionUID = -151999153367348806L;
 	private List<SpecialAttributeInfo> specialAttributeInfos;
 
 	@XmlElementWrapper(name = "DDSpecialAttribute")

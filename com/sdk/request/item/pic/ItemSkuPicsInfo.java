@@ -1,5 +1,6 @@
 package com.dangdang.sdk.request.item.pic;
 
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "SpecialPicInfo")
@@ -16,6 +17,7 @@ public class ItemSkuPicsInfo {
 		this.specialAttributeValue = specialAttributeValue;
 	}
 
+	@XmlElement(name = "ItemPic")
 	public String getItemPic() {
 		return itemPic;
 	}

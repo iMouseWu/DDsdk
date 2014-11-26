@@ -1,4 +1,4 @@
-package com.dangdang.sdk.response.shop;
+package com.dangdang.sdk.response;
 
 import javax.xml.bind.annotation.XmlRootElement;
 

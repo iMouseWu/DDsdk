@@ -1,5 +1,6 @@
 package com.dangdang.sdk.response.shop.category.saleprop;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlElement;
@@ -7,8 +8,9 @@ import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "specialAttributeInfo")
-public class SpecialAttributeInfo {
+public class SpecialAttributeInfo implements Serializable {
 
+	private static final long serialVersionUID = -1262527529339076498L;
 	private String specialAttributeID;
 	private String specialAttributeName;
 	private List<SpecialAttributeClassInfo> specialAttributeClassInfos;

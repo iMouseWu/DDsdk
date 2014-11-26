@@ -243,7 +243,7 @@ public abstract class WebUtils {
 			connHttps.setHostnameVerifier(new HostnameVerifier() {
 
 				public boolean verify(String hostname, SSLSession session) {
-					return true;// Ĭ�϶���֤ͨ��
+					return true;
 				}
 			});
 			conn = connHttps;

@@ -1,5 +1,6 @@
 package com.dangdang.sdk.response.shop.category.prop;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlElement;
@@ -7,8 +8,9 @@ import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "CategoryInfo")
-public class CategoryInfo {
+public class CategoryInfo implements Serializable {
 
+	private static final long serialVersionUID = -4066167117684897039L;
 	private String categoryID;
 	private String categoryName;
 
