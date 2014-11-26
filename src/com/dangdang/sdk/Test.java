@@ -6,6 +6,9 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
+import com.dangdang.sdk.response.shop.brand.DdbrandResponse;
+import com.dangdang.sdk.utils.XmlAnalysis;
+
 public class Test {
 
 	public static void main(String[] args) throws Exception {
@@ -18,6 +21,8 @@ public class Test {
 			stringBuilder.append(str);
 		}
 		reader.close();
+
+		System.out.println(XmlAnalysis.converyToJavaBean(stringBuilder.toString(), DdbrandResponse.class));
 
 	}
 }

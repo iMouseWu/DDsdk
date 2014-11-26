@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class ItemSkuPicsInfo {
 
 	private String specialAttributeValue;
-	private String ItemPic;
+	private String itemPic;
 
 	public String getSpecialAttributeValue() {
 		return specialAttributeValue;
@@ -17,11 +17,11 @@ public class ItemSkuPicsInfo {
 	}
 
 	public String getItemPic() {
-		return ItemPic;
+		return itemPic;
 	}
 
 	public void setItemPic(String itemPic) {
-		ItemPic = itemPic;
+		this.itemPic = itemPic;
 	}
 
 }

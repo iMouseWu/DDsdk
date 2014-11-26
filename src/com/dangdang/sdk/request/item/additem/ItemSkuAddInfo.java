@@ -8,6 +8,33 @@ public class ItemSkuAddInfo {
 	private String specialAttributeClass;
 	private String specialAttribute;
 	private String specialAttributeSeq;
+	private String stockCount;
+	private String unitPrice;
+	private String outerItemID;
+
+	public String getStockCount() {
+		return stockCount;
+	}
+
+	public void setStockCount(String stockCount) {
+		this.stockCount = stockCount;
+	}
+
+	public String getUnitPrice() {
+		return unitPrice;
+	}
+
+	public void setUnitPrice(String unitPrice) {
+		this.unitPrice = unitPrice;
+	}
+
+	public String getOuterItemID() {
+		return outerItemID;
+	}
+
+	public void setOuterItemID(String outerItemID) {
+		this.outerItemID = outerItemID;
+	}
 
 	public String getSpecialAttributeClass() {
 		return specialAttributeClass;

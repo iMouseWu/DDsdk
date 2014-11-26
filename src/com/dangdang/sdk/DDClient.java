@@ -33,9 +33,13 @@ public class DDClient {
 	private String makeSign(String method, String timestamp) {
 		StringBuilder stringBuilder = new StringBuilder();
 		stringBuilder.append(appSecret);
-		stringBuilder.append(appKey).append(format).append(method).append(sessionKey).append(signMethod);
-		stringBuilder.append(timestamp);
-		stringBuilder.append(version);
+		stringBuilder.append("app_key").append(appKey);
+		stringBuilder.append("format").append(format);
+		stringBuilder.append("method").append(method);
+		stringBuilder.append("session").append(sessionKey);
+		stringBuilder.append("sign_method").append(signMethod);
+		stringBuilder.append("timestamp").append(timestamp);
+		stringBuilder.append("v").append(version);
 		stringBuilder.append(appSecret);
 		return MD5.gain32CapitalMD5(stringBuilder.toString());
 	}
@@ -46,10 +50,17 @@ public class DDClient {
 		return formatter.format(d);
 	}
 
-	public String execute(DDRequest request, String method) throws IOException {
-		Map<String, String> params = request.getParams();
-		Map<String, FileItem> fileParams = request.getFileParams();
+	public String execute(String method) throws IOException {
+		return execute(null, method);
+	}
 
+	public String execute(DDRequest request, String method) throws IOException {
+		Map<String, String> params = new HashMap<String, String>();
+		Map<String, FileItem> fileParams = new HashMap<String, FileItem>();
+		if (null != request) {
+			params = request.getParams();
+			fileParams = request.getFileParams();
+		}
 		Map<String, String> urlParams = new HashMap<String, String>();
 		Set<Entry<String, String>> paramsEntrySet = params.entrySet();
 		for (Entry<String, String> paramsEntry : paramsEntrySet) {
@@ -67,7 +78,6 @@ public class DDClient {
 		urlParams.put("method", method);
 		urlParams.put("format", format);
 		urlParams.put("session", sessionKey);
-		return WebUtils.doPost(host, params, fileParams);
+		return WebUtils.doPost(host, urlParams, fileParams);
 	}
-
 }

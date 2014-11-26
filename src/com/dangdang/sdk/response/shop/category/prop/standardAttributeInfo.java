@@ -7,7 +7,10 @@ import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "standardAttributeInfo")
-public class standardAttributeInfo {
+public class StandardAttributeInfo {
+
+	public static final String PROP_MUST = "1";
+	public static final String PROP_NO_MUST = "0";
 
 	private String standardAttributeName;
 

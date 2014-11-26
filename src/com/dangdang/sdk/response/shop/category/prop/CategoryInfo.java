@@ -12,9 +12,9 @@ public class CategoryInfo {
 	private String categoryID;
 	private String categoryName;
 
-	private List<standardAttributeInfo> standardAttribute;
+	private List<StandardAttributeInfo> standardAttribute;
 
-	private SpecialAttribute specialAttribute;
+	private List<String> specialAttribute;
 
 	private ProductDescription productDescription;
 
@@ -36,20 +36,20 @@ public class CategoryInfo {
 
 	@XmlElementWrapper(name = "standardAttribute")
 	@XmlElement(name = "standardAttributeInfo")
-	public List<standardAttributeInfo> getStandardAttribute() {
+	public List<StandardAttributeInfo> getStandardAttribute() {
 		return standardAttribute;
 	}
 
-	public void setStandardAttribute(List<standardAttributeInfo> standardAttribute) {
+	public void setStandardAttribute(List<StandardAttributeInfo> standardAttribute) {
 		this.standardAttribute = standardAttribute;
 	}
 
 	@XmlElement(name = "specialAttribute")
-	public SpecialAttribute getSpecialAttribute() {
+	public List<String> getSpecialAttribute() {
 		return specialAttribute;
 	}
 
-	public void setSpecialAttribute(SpecialAttribute specialAttribute) {
+	public void setSpecialAttribute(List<String> specialAttribute) {
 		this.specialAttribute = specialAttribute;
 	}
 
