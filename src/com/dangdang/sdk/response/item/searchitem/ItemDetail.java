@@ -23,9 +23,16 @@ public class ItemDetail {
 	private String vipPriceType;
 	private String shopCategoryID1;
 	private String shopCategoryID2;
+	private String shopCategoryID3;
+	private String shopCategoryID4;
+	private String shopCategoryID5;
 	private String itemState;
 	private String is_cod;
 	private String itemType;
+	private String outerItemID;
+	private String unitPrice;
+	private String stockCount;
+	private String bestPartnerList;
 	private String volume;
 	private String weight;
 	private String templateName;
@@ -38,6 +45,62 @@ public class ItemDetail {
 	private String pic7;
 	private String pic8;
 	private List<SpecilaItemInfo> specilaItemInfos;
+
+	public String getOuterItemID() {
+		return outerItemID;
+	}
+
+	public void setOuterItemID(String outerItemID) {
+		this.outerItemID = outerItemID;
+	}
+
+	public String getUnitPrice() {
+		return unitPrice;
+	}
+
+	public void setUnitPrice(String unitPrice) {
+		this.unitPrice = unitPrice;
+	}
+
+	public String getBestPartnerList() {
+		return bestPartnerList;
+	}
+
+	public void setBestPartnerList(String bestPartnerList) {
+		this.bestPartnerList = bestPartnerList;
+	}
+
+	public String getStockCount() {
+		return stockCount;
+	}
+
+	public void setStockCount(String stockCount) {
+		this.stockCount = stockCount;
+	}
+
+	public String getShopCategoryID3() {
+		return shopCategoryID3;
+	}
+
+	public void setShopCategoryID3(String shopCategoryID3) {
+		this.shopCategoryID3 = shopCategoryID3;
+	}
+
+	public String getShopCategoryID4() {
+		return shopCategoryID4;
+	}
+
+	public void setShopCategoryID4(String shopCategoryID4) {
+		this.shopCategoryID4 = shopCategoryID4;
+	}
+
+	public String getShopCategoryID5() {
+		return shopCategoryID5;
+	}
+
+	public void setShopCategoryID5(String shopCategoryID5) {
+		this.shopCategoryID5 = shopCategoryID5;
+	}
 
 	public String getItemID() {
 		return itemID;

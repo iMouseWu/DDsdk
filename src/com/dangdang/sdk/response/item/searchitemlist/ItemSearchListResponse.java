@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import com.dangdang.sdk.response.BaseResponse;
 
 @XmlRootElement(name = "response")
-public class ItemListResponse extends BaseResponse {
+public class ItemSearchListResponse extends BaseResponse {
 
 	private TotalInfo totalInfo;
 	private List<ItemInfo> itemInfos;
