@@ -4,6 +4,8 @@ import javax.xml.bind.annotation.XmlElement;
 
 public class BaseResponse {
 
+	protected final String TRUE_CODE = "0";
+	protected final String ERROR_SPLIT = ";";
 	protected ErrorResponse errorBO;
 	protected ErrorInner errorInner;
 
@@ -37,6 +39,6 @@ public class BaseResponse {
 		if (null != errorInner) {
 			return errorInner.getOperCode();
 		}
-		return "";
+		return TRUE_CODE;
 	}
 }
