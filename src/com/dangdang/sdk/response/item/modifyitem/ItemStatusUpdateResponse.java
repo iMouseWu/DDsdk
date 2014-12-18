@@ -12,6 +12,7 @@ import com.dangdang.sdk.response.BaseResponse;
 public class ItemStatusUpdateResponse extends BaseResponse {
 
 	private List<ItemIDInfo> itemIDInfos;
+	private final String GOODSSTATUE_CODE = "1000";
 
 	@XmlElement(name = "ItemIDInfo")
 	@XmlElementWrapper(name = "ItemsIDList")
@@ -27,13 +28,26 @@ public class ItemStatusUpdateResponse extends BaseResponse {
 		if (null != errorBO) {
 			return errorBO.getErrorMessage();
 		}
-		return itemIDInfos.get(0).getOperation();
+		StringBuilder error = new StringBuilder();
+		for (ItemIDInfo itemIDInfo : itemIDInfos) {
+			String operCode = itemIDInfo.getOperCode();
+			if (!TRUE_CODE.equals(operCode) && !GOODSSTATUE_CODE.equals(operCode)) {
+				error.append(itemIDInfo.getOperation()).append(ERROR_SPLIT);
+			}
+		}
+		return error.toString();
 	}
 
 	public String getErrorCode() {
 		if (null != errorBO) {
 			return errorBO.getErrorCode();
 		}
-		return itemIDInfos.get(0).getOperCode();
+		for (ItemIDInfo itemIDInfo : itemIDInfos) {
+			String operCode = itemIDInfo.getOperCode();
+			if (!TRUE_CODE.equals(operCode) && !GOODSSTATUE_CODE.equals(operCode)) {
+				return operCode;
+			}
+		}
+		return TRUE_CODE;
 	}
 }
