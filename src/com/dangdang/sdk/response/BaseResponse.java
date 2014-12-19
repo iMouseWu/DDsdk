@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.XmlElement;
 
 public class BaseResponse {
 
-	protected final String TRUE_CODE = "0";
+	protected static final String TRUE_CODE = "0";
 	protected final String ERROR_SPLIT = ";";
 	protected ErrorResponse errorBO;
 	protected ErrorInner errorInner;

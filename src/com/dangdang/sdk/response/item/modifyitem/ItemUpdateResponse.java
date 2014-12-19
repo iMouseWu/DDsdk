@@ -1,9 +1,6 @@
 package com.dangdang.sdk.response.item.modifyitem;
 
-import java.util.List;
-
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import org.apache.commons.collections.CollectionUtils;
@@ -14,23 +11,22 @@ import com.dangdang.sdk.response.BaseResponse;
 @XmlRootElement(name = "response")
 public class ItemUpdateResponse extends BaseResponse {
 
-	private List<ItemUpdateInfo> itemUpdateInfos;
+	private Result result;
 
-	@XmlElement(name = "ItemIDInfo")
-	@XmlElementWrapper(name = "ItemsIDList")
-	public List<ItemUpdateInfo> getItemUpdateInfos() {
-		return itemUpdateInfos;
+	@XmlElement(name = "Result")
+	public Result getResult() {
+		return result;
 	}
 
-	public void setItemUpdateInfos(List<ItemUpdateInfo> itemUpdateInfos) {
-		this.itemUpdateInfos = itemUpdateInfos;
+	public void setResult(Result result) {
+		this.result = result;
 	}
 
 	public String getErrorMsg() {
-		if (null != errorBO) {
-			return errorBO.getErrorMessage();
+		if (StringUtils.isNotBlank(super.getErrorMsg())) {
+			return super.getErrorMsg();
 		}
-		ItemUpdateInfo itemUpdateInfo = itemUpdateInfos.get(0);
+		ItemUpdateInfo itemUpdateInfo = result.getItemUpdateInfos().get(0);
 		if (StringUtils.isNotBlank(itemUpdateInfo.getOperation())) {
 			return itemUpdateInfo.getOperation();
 		}
@@ -46,10 +42,11 @@ public class ItemUpdateResponse extends BaseResponse {
 	}
 
 	public String getErrorCode() {
-		if (null != errorBO) {
-			return errorBO.getErrorCode();
+		if (!BaseResponse.TRUE_CODE.equals(super.getErrorCode())) {
+			return super.getErrorCode();
 		}
-		ItemUpdateInfo itemUpdateInfo = itemUpdateInfos.get(0);
+
+		ItemUpdateInfo itemUpdateInfo = result.getItemUpdateInfos().get(0);
 		if (StringUtils.isNotBlank(itemUpdateInfo.getOperCode())) {
 			return itemUpdateInfo.getOperCode();
 		}

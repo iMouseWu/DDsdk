@@ -16,6 +16,9 @@ public class ItemUpadteInfo {
 	private String classificationCode2;
 	private String brand;
 	private String model;
+	private String stockCount;
+	private String unitPrice;
+	private String outerItemID;
 	private String attribute;
 	private String itemDetail;
 	private String stockPrice;
@@ -36,6 +39,30 @@ public class ItemUpadteInfo {
 	private String volume;
 	private String weight;;
 	private String templateName;
+
+	public String getStockCount() {
+		return stockCount;
+	}
+
+	public void setStockCount(String stockCount) {
+		this.stockCount = stockCount;
+	}
+
+	public String getUnitPrice() {
+		return unitPrice;
+	}
+
+	public void setUnitPrice(String unitPrice) {
+		this.unitPrice = unitPrice;
+	}
+
+	public String getOuterItemID() {
+		return outerItemID;
+	}
+
+	public void setOuterItemID(String outerItemID) {
+		this.outerItemID = outerItemID;
+	}
 
 	public String getItemID() {
 		return itemID;
